@@ -1,0 +1,1071 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, right top, left top, from(#510051), to(darkblue));
+  background: linear-gradient(-90deg, #510051, darkblue);
+}
+
+header {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
+  width: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(#340034), to(#000034));
+  background: linear-gradient(-90deg, #340034, #000034);
+  color: white;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  font-family: 'Indie Flower', cursive;
+}
+
+header span {
+  font-size: 3rem;
+  font-family: 'Indie Flower', cursive;
+}
+
+header .greeting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .greeting {
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+header .greeting:hover .name {
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  color: lightblue;
+  cursor: pointer;
+}
+
+header .mini-clock {
+  margin-right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  background: -webkit-gradient(linear, right top, left top, from(#510051), to(darkblue));
+  background: linear-gradient(-90deg, #510051, darkblue);
+  -webkit-box-shadow: 0 0 1rem pink;
+          box-shadow: 0 0 1rem pink;
+  border: .25rem solid white;
+}
+
+header .mini-clock .clock-hand {
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  width: 2.5%;
+  background: red;
+  -webkit-animation: rotate 20s infinite linear;
+          animation: rotate 20s infinite linear;
+  -webkit-box-shadow: 0 .1rem .1rem;
+          box-shadow: 0 .1rem .1rem;
+}
+
+.timer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.timer-container .clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1rem solid #510051;
+  border-radius: .5rem;
+  height: 25rem;
+  width: 50rem;
+  background: black;
+  -webkit-box-shadow: 0 0 4rem pink;
+          box-shadow: 0 0 4rem pink;
+}
+
+.timer-container .timer-type-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 2rem;
+}
+
+.timer-container .timer-type-selection .stopwatch {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.timer-container .timer-type-selection button {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#510051), to(black));
+  background: linear-gradient(to right, #510051, black);
+  color: pink;
+  border-radius: .5rem;
+  height: 100%;
+  width: 20%;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+}
+
+.timer-container .timer-type-selection button:hover {
+  color: white;
+  -webkit-box-shadow: 0 0 1rem pink;
+          box-shadow: 0 0 1rem pink;
+}
+
+.timer-container .display {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: .5rem;
+  background: linear-gradient(45deg, black, #510051, black);
+  width: 90%;
+  height: 50%;
+  margin: -.25rem;
+}
+
+.timer-container .display .hours, .timer-container .display .minutes, .timer-container .display .seconds {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 26%;
+  height: 90%;
+}
+
+.timer-container .display .hours .digit.one, .timer-container .display .hours .digit.two, .timer-container .display .minutes .digit.one, .timer-container .display .minutes .digit.two, .timer-container .display .seconds .digit.one, .timer-container .display .seconds .digit.two {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 45%;
+}
+
+.timer-container .display .hours .digit.one .vertical-lines, .timer-container .display .hours .digit.two .vertical-lines, .timer-container .display .minutes .digit.one .vertical-lines, .timer-container .display .minutes .digit.two .vertical-lines, .timer-container .display .seconds .digit.one .vertical-lines, .timer-container .display .seconds .digit.two .vertical-lines {
+  height: 100%;
+  width: 100%;
+}
+
+.timer-container .display .hours .digit.one .vertical-lines .upper.lines, .timer-container .display .hours .digit.one .vertical-lines .lower.lines, .timer-container .display .hours .digit.two .vertical-lines .upper.lines, .timer-container .display .hours .digit.two .vertical-lines .lower.lines, .timer-container .display .minutes .digit.one .vertical-lines .upper.lines, .timer-container .display .minutes .digit.one .vertical-lines .lower.lines, .timer-container .display .minutes .digit.two .vertical-lines .upper.lines, .timer-container .display .minutes .digit.two .vertical-lines .lower.lines, .timer-container .display .seconds .digit.one .vertical-lines .upper.lines, .timer-container .display .seconds .digit.one .vertical-lines .lower.lines, .timer-container .display .seconds .digit.two .vertical-lines .upper.lines, .timer-container .display .seconds .digit.two .vertical-lines .lower.lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50%;
+  width: 100%;
+}
+
+.timer-container .display .hours .digit.one .vertical-lines .upper.lines div, .timer-container .display .hours .digit.one .vertical-lines .lower.lines div, .timer-container .display .hours .digit.two .vertical-lines .upper.lines div, .timer-container .display .hours .digit.two .vertical-lines .lower.lines div, .timer-container .display .minutes .digit.one .vertical-lines .upper.lines div, .timer-container .display .minutes .digit.one .vertical-lines .lower.lines div, .timer-container .display .minutes .digit.two .vertical-lines .upper.lines div, .timer-container .display .minutes .digit.two .vertical-lines .lower.lines div, .timer-container .display .seconds .digit.one .vertical-lines .upper.lines div, .timer-container .display .seconds .digit.one .vertical-lines .lower.lines div, .timer-container .display .seconds .digit.two .vertical-lines .upper.lines div, .timer-container .display .seconds .digit.two .vertical-lines .lower.lines div {
+  border-radius: .5rem;
+  height: 70%;
+  width: .5rem;
+  background: #510051;
+  -webkit-box-shadow: 0 0 1rem pink;
+          box-shadow: 0 0 1rem pink;
+}
+
+.timer-container .display .hours .digit.one .horizontal-lines, .timer-container .display .hours .digit.two .horizontal-lines, .timer-container .display .minutes .digit.one .horizontal-lines, .timer-container .display .minutes .digit.two .horizontal-lines, .timer-container .display .seconds .digit.one .horizontal-lines, .timer-container .display .seconds .digit.two .horizontal-lines {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+}
+
+.timer-container .display .hours .digit.one .horizontal-lines div, .timer-container .display .hours .digit.two .horizontal-lines div, .timer-container .display .minutes .digit.one .horizontal-lines div, .timer-container .display .minutes .digit.two .horizontal-lines div, .timer-container .display .seconds .digit.one .horizontal-lines div, .timer-container .display .seconds .digit.two .horizontal-lines div {
+  border-radius: .5rem;
+  height: .5rem;
+  width: 70%;
+  background: #510051;
+  -webkit-box-shadow: 0 0 1rem pink;
+          box-shadow: 0 0 1rem pink;
+}
+
+.timer-container .display .dividers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  width: 10%;
+  -webkit-box-shadow: 0 0 lime;
+          box-shadow: 0 0 lime;
+}
+
+.timer-container .display .dividers div {
+  border-radius: 1rem;
+  width: 1rem;
+  height: 1rem;
+  background: #510051;
+}
+
+.timer-container .timeUpDown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+}
+
+.timer-container .timeUpDown button {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#510051), to(black));
+  background: linear-gradient(to right, #510051, black);
+  color: pink;
+  height: 100%;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  width: 2rem;
+}
+
+.timer-container .timeUpDown button:hover {
+  color: white;
+  -webkit-box-shadow: 0 0 1rem pink;
+          box-shadow: 0 0 1rem pink;
+}
+
+.timer-container .timeUpDown button h1 {
+  font-size: 1.5rem;
+}
+
+.timer-container .increment-buttons button {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  height: 2rem;
+}
+
+.timer-container .decrement-buttons button {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  height: 2rem;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    background: -webkit-gradient(linear, right top, left top, from(#340034), to(#000034));
+    background: linear-gradient(-90deg, #340034, #000034);
+    color: white;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    font-family: 'Indie Flower', cursive;
+  }
+  header h1 {
+    font-size: 1rem;
+  }
+  header .greeting {
+    margin-right: 1rem;
+    font-size: .75rem;
+  }
+  header .greeting:hover .name {
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
+    color: lightblue;
+    cursor: pointer;
+  }
+  header .mini-clock {
+    margin-right: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    background: -webkit-gradient(linear, right top, left top, from(#510051), to(darkblue));
+    background: linear-gradient(-90deg, #510051, darkblue);
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+    border: .1rem solid white;
+  }
+  header .mini-clock .clock-hand {
+    height: 20%;
+    left: 48.75%;
+    position: absolute;
+    top: 30%;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    width: 2.5%;
+    background: red;
+    -webkit-animation: rotate 20s infinite linear;
+            animation: rotate 20s infinite linear;
+    -webkit-box-shadow: 0 .1rem .1rem;
+            box-shadow: 0 .1rem .1rem;
+  }
+  .timer-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  .timer-container .clock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1rem solid #510051;
+    border-radius: .5rem;
+    height: 18rem;
+    width: 42rem;
+    background: black;
+    -webkit-box-shadow: 0 0 4rem pink;
+            box-shadow: 0 0 4rem pink;
+  }
+  .timer-container .timer-type-selection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 1rem;
+  }
+  .timer-container .timer-type-selection .stopwatch {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+  .timer-container .timer-type-selection button {
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, right top, from(#510051), to(black));
+    background: linear-gradient(to right, #510051, black);
+    color: pink;
+    border-radius: .5rem;
+    height: 100%;
+    width: 20%;
+    -webkit-transition: all ease .25s;
+    transition: all ease .25s;
+    font-size: .75rem;
+  }
+  .timer-container .timer-type-selection button:hover {
+    color: white;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .display {
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 1;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    border-radius: .5rem;
+    background: linear-gradient(45deg, black, #510051, black);
+    width: 90%;
+    height: 50%;
+    margin: -.25rem;
+  }
+  .timer-container .display .hours, .timer-container .display .minutes, .timer-container .display .seconds {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 26%;
+    height: 90%;
+  }
+  .timer-container .display .hours .digit.one, .timer-container .display .hours .digit.two, .timer-container .display .minutes .digit.one, .timer-container .display .minutes .digit.two, .timer-container .display .seconds .digit.one, .timer-container .display .seconds .digit.two {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 45%;
+  }
+  .timer-container .display .hours .digit.one .vertical-lines, .timer-container .display .hours .digit.two .vertical-lines, .timer-container .display .minutes .digit.one .vertical-lines, .timer-container .display .minutes .digit.two .vertical-lines, .timer-container .display .seconds .digit.one .vertical-lines, .timer-container .display .seconds .digit.two .vertical-lines {
+    height: 100%;
+    width: 100%;
+  }
+  .timer-container .display .hours .digit.one .vertical-lines .upper.lines, .timer-container .display .hours .digit.one .vertical-lines .lower.lines, .timer-container .display .hours .digit.two .vertical-lines .upper.lines, .timer-container .display .hours .digit.two .vertical-lines .lower.lines, .timer-container .display .minutes .digit.one .vertical-lines .upper.lines, .timer-container .display .minutes .digit.one .vertical-lines .lower.lines, .timer-container .display .minutes .digit.two .vertical-lines .upper.lines, .timer-container .display .minutes .digit.two .vertical-lines .lower.lines, .timer-container .display .seconds .digit.one .vertical-lines .upper.lines, .timer-container .display .seconds .digit.one .vertical-lines .lower.lines, .timer-container .display .seconds .digit.two .vertical-lines .upper.lines, .timer-container .display .seconds .digit.two .vertical-lines .lower.lines {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 50%;
+    width: 100%;
+  }
+  .timer-container .display .hours .digit.one .vertical-lines .upper.lines div, .timer-container .display .hours .digit.one .vertical-lines .lower.lines div, .timer-container .display .hours .digit.two .vertical-lines .upper.lines div, .timer-container .display .hours .digit.two .vertical-lines .lower.lines div, .timer-container .display .minutes .digit.one .vertical-lines .upper.lines div, .timer-container .display .minutes .digit.one .vertical-lines .lower.lines div, .timer-container .display .minutes .digit.two .vertical-lines .upper.lines div, .timer-container .display .minutes .digit.two .vertical-lines .lower.lines div, .timer-container .display .seconds .digit.one .vertical-lines .upper.lines div, .timer-container .display .seconds .digit.one .vertical-lines .lower.lines div, .timer-container .display .seconds .digit.two .vertical-lines .upper.lines div, .timer-container .display .seconds .digit.two .vertical-lines .lower.lines div {
+    border-radius: .5rem;
+    height: 70%;
+    width: .5rem;
+    background: #510051;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .display .hours .digit.one .horizontal-lines, .timer-container .display .hours .digit.two .horizontal-lines, .timer-container .display .minutes .digit.one .horizontal-lines, .timer-container .display .minutes .digit.two .horizontal-lines, .timer-container .display .seconds .digit.one .horizontal-lines, .timer-container .display .seconds .digit.two .horizontal-lines {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: absolute;
+  }
+  .timer-container .display .hours .digit.one .horizontal-lines div, .timer-container .display .hours .digit.two .horizontal-lines div, .timer-container .display .minutes .digit.one .horizontal-lines div, .timer-container .display .minutes .digit.two .horizontal-lines div, .timer-container .display .seconds .digit.one .horizontal-lines div, .timer-container .display .seconds .digit.two .horizontal-lines div {
+    border-radius: .5rem;
+    height: .5rem;
+    width: 70%;
+    background: #510051;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .display .dividers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: 100%;
+    width: 10%;
+    -webkit-box-shadow: 0 0 lime;
+            box-shadow: 0 0 lime;
+  }
+  .timer-container .display .dividers div {
+    border-radius: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background: #510051;
+  }
+  .timer-container .timeUpDown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 70%;
+  }
+  .timer-container .timeUpDown button {
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, right top, from(#510051), to(black));
+    background: linear-gradient(to right, #510051, black);
+    color: pink;
+    height: 100%;
+    -webkit-transition: all ease .25s;
+    transition: all ease .25s;
+    width: 2rem;
+  }
+  .timer-container .timeUpDown button:hover {
+    color: white;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .timeUpDown button h1 {
+    font-size: 1.5rem;
+  }
+  .timer-container .increment-buttons button {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 2rem;
+  }
+  .timer-container .decrement-buttons button {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    background: -webkit-gradient(linear, right top, left top, from(#340034), to(#000034));
+    background: linear-gradient(-90deg, #340034, #000034);
+    color: white;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    font-family: 'Indie Flower', cursive;
+  }
+  header h1 {
+    font-size: 1rem;
+  }
+  header .greeting {
+    margin-right: 1rem;
+    font-size: .50rem;
+  }
+  header .greeting:hover .name {
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
+    color: lightblue;
+    cursor: pointer;
+  }
+  header .mini-clock {
+    margin-right: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    background: -webkit-gradient(linear, right top, left top, from(#510051), to(darkblue));
+    background: linear-gradient(-90deg, #510051, darkblue);
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+    border: .1rem solid white;
+  }
+  header .mini-clock .clock-hand {
+    height: 20%;
+    left: 48.75%;
+    position: absolute;
+    top: 30%;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    width: 2.5%;
+    background: red;
+    -webkit-animation: rotate 20s infinite linear;
+            animation: rotate 20s infinite linear;
+    -webkit-box-shadow: 0 .1rem .1rem;
+            box-shadow: 0 .1rem .1rem;
+  }
+  .timer-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  .timer-container .clock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1rem solid #510051;
+    border-radius: .5rem;
+    height: 18rem;
+    width: 42rem;
+    background: black;
+    -webkit-box-shadow: 0 0 4rem pink;
+            box-shadow: 0 0 4rem pink;
+  }
+  .timer-container .timer-type-selection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 1rem;
+  }
+  .timer-container .timer-type-selection .stopwatch {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+  .timer-container .timer-type-selection button {
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, right top, from(#510051), to(black));
+    background: linear-gradient(to right, #510051, black);
+    color: pink;
+    border-radius: .5rem;
+    height: 100%;
+    width: 20%;
+    -webkit-transition: all ease .25s;
+    transition: all ease .25s;
+    font-size: .75rem;
+  }
+  .timer-container .timer-type-selection button:hover {
+    color: white;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .display {
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 1;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    border-radius: .5rem;
+    background: linear-gradient(45deg, black, #510051, black);
+    width: 90%;
+    height: 50%;
+    margin: -.25rem;
+  }
+  .timer-container .display .hours, .timer-container .display .minutes, .timer-container .display .seconds {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 26%;
+    height: 90%;
+  }
+  .timer-container .display .hours .digit.one, .timer-container .display .hours .digit.two, .timer-container .display .minutes .digit.one, .timer-container .display .minutes .digit.two, .timer-container .display .seconds .digit.one, .timer-container .display .seconds .digit.two {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 45%;
+  }
+  .timer-container .display .hours .digit.one .vertical-lines, .timer-container .display .hours .digit.two .vertical-lines, .timer-container .display .minutes .digit.one .vertical-lines, .timer-container .display .minutes .digit.two .vertical-lines, .timer-container .display .seconds .digit.one .vertical-lines, .timer-container .display .seconds .digit.two .vertical-lines {
+    height: 100%;
+    width: 100%;
+  }
+  .timer-container .display .hours .digit.one .vertical-lines .upper.lines, .timer-container .display .hours .digit.one .vertical-lines .lower.lines, .timer-container .display .hours .digit.two .vertical-lines .upper.lines, .timer-container .display .hours .digit.two .vertical-lines .lower.lines, .timer-container .display .minutes .digit.one .vertical-lines .upper.lines, .timer-container .display .minutes .digit.one .vertical-lines .lower.lines, .timer-container .display .minutes .digit.two .vertical-lines .upper.lines, .timer-container .display .minutes .digit.two .vertical-lines .lower.lines, .timer-container .display .seconds .digit.one .vertical-lines .upper.lines, .timer-container .display .seconds .digit.one .vertical-lines .lower.lines, .timer-container .display .seconds .digit.two .vertical-lines .upper.lines, .timer-container .display .seconds .digit.two .vertical-lines .lower.lines {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 50%;
+    width: 100%;
+  }
+  .timer-container .display .hours .digit.one .vertical-lines .upper.lines div, .timer-container .display .hours .digit.one .vertical-lines .lower.lines div, .timer-container .display .hours .digit.two .vertical-lines .upper.lines div, .timer-container .display .hours .digit.two .vertical-lines .lower.lines div, .timer-container .display .minutes .digit.one .vertical-lines .upper.lines div, .timer-container .display .minutes .digit.one .vertical-lines .lower.lines div, .timer-container .display .minutes .digit.two .vertical-lines .upper.lines div, .timer-container .display .minutes .digit.two .vertical-lines .lower.lines div, .timer-container .display .seconds .digit.one .vertical-lines .upper.lines div, .timer-container .display .seconds .digit.one .vertical-lines .lower.lines div, .timer-container .display .seconds .digit.two .vertical-lines .upper.lines div, .timer-container .display .seconds .digit.two .vertical-lines .lower.lines div {
+    border-radius: .5rem;
+    height: 70%;
+    width: .5rem;
+    background: #510051;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .display .hours .digit.one .horizontal-lines, .timer-container .display .hours .digit.two .horizontal-lines, .timer-container .display .minutes .digit.one .horizontal-lines, .timer-container .display .minutes .digit.two .horizontal-lines, .timer-container .display .seconds .digit.one .horizontal-lines, .timer-container .display .seconds .digit.two .horizontal-lines {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: absolute;
+  }
+  .timer-container .display .hours .digit.one .horizontal-lines div, .timer-container .display .hours .digit.two .horizontal-lines div, .timer-container .display .minutes .digit.one .horizontal-lines div, .timer-container .display .minutes .digit.two .horizontal-lines div, .timer-container .display .seconds .digit.one .horizontal-lines div, .timer-container .display .seconds .digit.two .horizontal-lines div {
+    border-radius: .5rem;
+    height: .5rem;
+    width: 70%;
+    background: #510051;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .display .dividers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: 100%;
+    width: 10%;
+    -webkit-box-shadow: 0 0 lime;
+            box-shadow: 0 0 lime;
+  }
+  .timer-container .display .dividers div {
+    border-radius: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background: #510051;
+  }
+  .timer-container .timeUpDown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 70%;
+  }
+  .timer-container .timeUpDown button {
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, right top, from(#510051), to(black));
+    background: linear-gradient(to right, #510051, black);
+    color: pink;
+    height: 100%;
+    -webkit-transition: all ease .25s;
+    transition: all ease .25s;
+    width: 2rem;
+  }
+  .timer-container .timeUpDown button:hover {
+    color: white;
+    -webkit-box-shadow: 0 0 1rem pink;
+            box-shadow: 0 0 1rem pink;
+  }
+  .timer-container .timeUpDown button h1 {
+    font-size: 1.5rem;
+  }
+  .timer-container .increment-buttons button {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 2rem;
+  }
+  .timer-container .decrement-buttons button {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 2rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */
